@@ -1,0 +1,56 @@
+public class Question
+{
+    public int questionId { get; set; }
+    public string question { get; set; }
+    public int parentId { get; set; }
+    public int questionCategoryId { get; set; }
+}
+
+public class RootObject
+{
+    public bool success { get; set; }
+    public List<Question> questions { get; set; }
+    public string choiceA { get; set; }
+    public string choiceB { get; set; }
+    public string choiceC { get; set; }
+    public string choiceD { get; set; }
+    public string choiceE { get; set; }
+}
+
+ HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri("http://www.ihiringonline.com/ihiring/LoadPsychometricQuestionServlet");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+JavaScriptSerializer objJavaScriptSerializer = new JavaScriptSerializer();
+ 
+StatusValueTest[] objStatus = objJavaScriptSerializer.Deserialize<StatusValueTest[]>(strJSONData);
+ 
+foreach (StatusValueTest val in objStatus)
+
+
+
+
+
+
+
+
+ <GridView ItemsSource="{Binding Questions}" Margin="-10,8,10,-8">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Name="QuestionText" Text="{Binding questions}"></TextBlock>
+                        <RadioButton Name="RadButton1" Content="{Binding choiceA}"/>
+                        <RadioButton Name="RadButton2" Content="{Binding choiceB}"/>
+                        <RadioButton Name="RadButton3" Content="{Binding choiceC}"/>
+                        <RadioButton Name="RadButton4" Content="{Binding choiceD}"/>
+
+                    </StackPanel>
+
+                </DataTemplate >
+
+            </GridView.ItemTemplate>
+
+        </GridView>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left" Height="100" Margin="0,-92,0,0" VerticalAlignment="Top" Width="360"/>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left" Height="100" Margin="0,457,0,-95" VerticalAlignment="Top" Width="360"/>
