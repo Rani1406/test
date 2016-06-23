@@ -27,14 +27,6 @@ JavaScriptSerializer objJavaScriptSerializer = new JavaScriptSerializer();
 StatusValueTest[] objStatus = objJavaScriptSerializer.Deserialize<StatusValueTest[]>(strJSONData);
  
 foreach (StatusValueTest val in objStatus)
-
-
-
-
-
-
-
-
  <GridView ItemsSource="{Binding Questions}" Margin="-10,8,10,-8">
             <GridView.ItemTemplate>
                 <DataTemplate>
